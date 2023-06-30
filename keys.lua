@@ -78,8 +78,8 @@ function M.setup(config)
             {
                 key = "t",
                 mods = "NONE",
-                action = wezterm.action_callback(function(_, pane)
-                    local _, _ = pane:move_to_new_tab()
+                action = wezterm.action_callback(function(win, pane)
+                    local tab, window = pane:move_to_new_tab()
                 end),
             },
             { key = "m", mods = "NONE", action = act.PaneSelect({ mode = "SwapWithActive" }) },
