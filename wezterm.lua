@@ -34,6 +34,7 @@ config = {
     text_background_opacity = 1.0,
     term = "wezterm",
     animation_fps = 60,
+    quick_select_alphabet = "fjdkslaruvmgheiwoxqpbnz",
     inactive_pane_hsb = {
         brightness = 0.6,
         hue = 1.0,
