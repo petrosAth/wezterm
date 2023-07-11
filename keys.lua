@@ -69,10 +69,18 @@ function M.setup(config)
             { key = "m", action = act.PaneSelect({ mode = "SwapWithActive" }) },
 
             -- Split panes
-            { key = "v", action = act.SplitHorizontal({ cwd = "~" }) },
-            { key = "s", action = act.SplitVertical({ cwd = "~" }) },
-            { key = "v", mods = "CTRL", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-            { key = "s", mods = "CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+            { key = "v", action = act.Multiple({ act.SplitHorizontal({ cwd = "~" }), "PopKeyTable" }) },
+            { key = "s", action = act.Multiple({ act.SplitVertical({ cwd = "~" }), "PopKeyTable" }) },
+            {
+                key = "v",
+                mods = "CTRL",
+                action = act.Multiple({ act.SplitHorizontal({ domain = "CurrentPaneDomain" }), "PopKeyTable" }),
+            },
+            {
+                key = "s",
+                mods = "CTRL",
+                action = act.Multiple({ act.SplitVertical({ domain = "CurrentPaneDomain" }), "PopKeyTable" }),
+            },
 
             -- Manipulate panes
             {
