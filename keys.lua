@@ -21,7 +21,7 @@ function M.setup(config)
         {
             key = "w",
             mods = "LEADER|CTRL",
-            action = act.ActivateKeyTable({ name = "window_mode", one_shot = false, until_unknown = true }),
+            action = act.ActivateKeyTable({ name = "window_mode", one_shot = false }),
         },
         {
             key = "Escape",
