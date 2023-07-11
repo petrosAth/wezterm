@@ -52,6 +52,10 @@ function M.setup(config)
         { key = "Tab", mods = "LEADER", action = act.ActivateLastTab },
     }
 
+    local function pop_key_table_after(action)
+        return act.Multiple({ action, "PopKeyTable" })
+    end
+
     config.key_tables = {
         window_mode = {
             -- Resize panes
@@ -61,11 +65,11 @@ function M.setup(config)
             { key = "-", action = act.AdjustPaneSize({ "Down", 1 }) },
 
             -- Navigate through panes
-            { key = "h", action = act.ActivatePaneDirection("Left") },
-            { key = "l", action = act.ActivatePaneDirection("Right") },
-            { key = "k", action = act.ActivatePaneDirection("Up") },
-            { key = "j", action = act.ActivatePaneDirection("Down") },
-            { key = "w", action = act.PaneSelect },
+            { key = "h", action = pop_key_table_after(act.ActivatePaneDirection("Left")) },
+            { key = "l", action = pop_key_table_after(act.ActivatePaneDirection("Right")) },
+            { key = "k", action = pop_key_table_after(act.ActivatePaneDirection("Up")) },
+            { key = "j", action = pop_key_table_after(act.ActivatePaneDirection("Down")) },
+            { key = "w", action = pop_key_table_after(act.PaneSelect) },
             { key = "m", action = act.PaneSelect({ mode = "SwapWithActive" }) },
 
             -- Split panes
