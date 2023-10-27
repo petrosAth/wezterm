@@ -13,7 +13,7 @@ config = {
         "monospace",
         "Symbols Nerd Font",
     }),
-    font_size = 12,
+    font_size = 10,
     window_background_opacity = 0.9,
     window_padding = {
         top = 0,
