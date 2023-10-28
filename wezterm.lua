@@ -7,12 +7,7 @@ local config = {}
 
 config = {
     colors = colors.colors,
-    font = wezterm.font_with_fallback({
-        "JetBrainsMono Nerd Font",
-        "Twemoji",
-        "monospace",
-        "Symbols Nerd Font",
-    }),
+    font = wezterm.font("monospace"),
     font_size = 10,
     window_background_opacity = 0.9,
     window_padding = {
