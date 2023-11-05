@@ -9,6 +9,7 @@ config = {
     colors = colors.colors,
     font = wezterm.font("monospace"),
     font_size = 10,
+    window_decorations = "RESIZE",
     window_background_opacity = 0.9,
     window_padding = {
         top = 0,
