@@ -15,7 +15,7 @@ local function get_proc(tab, max_width)
 end
 
 local function get_cwd(uri, short)
-    local cwd = uri
+    local cwd = type(uri) == "userdata" and uri.file_path or ""
 
     if cwd == nil or cwd == "" then
         cwd = icons.empty
