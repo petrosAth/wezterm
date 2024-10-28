@@ -73,7 +73,7 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
                 return wezterm.format({
                     { Background = { Color = color.title.sep.base.bg } },
                     { Foreground = { Color = color.title.sep.base.fg } },
-                    { Text = string.format(" %s", icons.sep.right) },
+                    { Text = string.format("%s", icons.sep.right) },
                 })
             end
 
@@ -97,7 +97,7 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
                 return wezterm.format({
                     { Background = { Color = color.title.text.base.bg } },
                     { Foreground = { Color = color.title.text.base.fg } },
-                    { Text = string.format(" %s %s", icons.panes, #tab.panes) },
+                    { Text = string.format(" %s %s ", icons.panes, #tab.panes) },
                 })
             end
 
@@ -134,7 +134,7 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
             { Text = string.format(" %s ", icons.sep.right) },
             { Background = { Color = color.title.text.base.bg } },
             { Foreground = { Color = color.title.text.base.fg } },
-            { Text = get_proc(tab, max_width) },
+            { Text = get_proc(tab, max_width) .. " " },
             { Text = style_flag() },
             { Background = { Color = color.title.wrap.base.bg } },
             { Foreground = { Color = color.title.wrap.base.fg } },
@@ -190,7 +190,7 @@ wezterm.on("update-right-status", function(window, pane)
             { Text = icons.wrap.left },
             { Background = { Color = cwd_color.status.cwd.text.bg } },
             { Foreground = { Color = cwd_color.status.cwd.text.fg } },
-            { Text = string.format("%s ", cwd) },
+            { Text = string.format(" %s ", cwd) },
             { Foreground = { Color = mode_color.wrap.fg } },
             { Text = icons.wrap.left },
             { Background = { Color = mode_color.text.bg } },
